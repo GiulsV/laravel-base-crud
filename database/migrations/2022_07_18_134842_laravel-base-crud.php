@@ -13,15 +13,16 @@ class LaravelBaseCrud extends Migration
      */
     public function up()
     {
-        Schema::create('comics', function(Blueprint $table){
-            $table->string('title');
-            $table->string('description');
-            $table->string('thumb');
-            $table->string('price');
-            $table->string('series');
-            $table->string('sale_date');
-            $table->string('type');
+        Schema::create('comics', function (Blueprint $table) {
+            $table->id();
             $table->timestamps();
+            $table->string('title', 200);
+            $table->text('description');
+            $table->string('thumb');
+            $table->float('price', 8, 2);
+            $table->string('series', 100);
+            $table->date('sale_date');
+            $table->string('type', 100);
         });
     }
 
